@@ -119,7 +119,85 @@ function App() {
     setExperienceEntries( experienceEntries.filter(entry => entry.id !== id) );
   };
 
+  //education
+  const[education, setEducation] = useState({
+    school: '',
+    location: '',
+    major: '',
+    degree: '',
+    details: '',
+    startDate: '',
+    endDate: '',
+    id: uuidv4(),
+  });
+  //educationEntries
+  const[educationEntries, setEducationEntries] = useState([]);
 
+  const handleEducationChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+
+    setEducation((education) => {
+      return {
+        ...education,   // Spread Operator               
+        [name]: value
+      }
+    })
+  }
+
+  const onSubmitEducation = (e) => {
+    //Prevent default behavior (form refresh)
+    e.preventDefault();
+
+    //Check if education key is already in use
+    const replaceEntry = educationEntries.find(entry => entry.id == education.id);
+
+    //if key isn't already in use, add new entry to array 
+    if (replaceEntry == undefined) {
+      setEducationEntries(
+        // Add current education form inputs to an object, add the object to an array to be read by the component
+        educationEntries.concat(education),
+      );
+    }
+    else {
+      // Insert modified entry back into array
+      const replaceIndex = educationEntries.indexOf(replaceEntry)
+      const editedArray = [...educationEntries.slice(0,replaceIndex ), education, ...educationEntries.slice(replaceIndex + 1)]
+      setEducationEntries(
+        editedArray,
+      );
+    }
+    // Clear out the input fields, prepare next ID
+    setEducation({
+      school : '',
+      location: '',
+      major : '',
+      degree : '',
+      details: '',
+      startDate : '',
+      endDate : '',
+      id: uuidv4(),
+    });
+  };
+
+  const editEducationEntry = (id) => {
+    const updatedEntry = educationEntries.find(entry => entry.id == id);
+    setEducation({
+        school: updatedEntry.school,
+        location: updatedEntry.location,
+        major: updatedEntry.major,
+        degree: updatedEntry.degree,
+        details: updatedEntry.details,
+        startDate:  updatedEntry.startDate,
+        endDate:  updatedEntry.endDate,
+        id: updatedEntry.id,
+    });
+  };
+
+  const deleteEducationEntry = (id) => {
+    // const educationEntries = educationEntries.filter(entry => entry.id !== id);
+    setEducationEntries( educationEntries.filter(entry => entry.id !== id) );
+  };
 
   return (
     <>
@@ -130,15 +208,20 @@ function App() {
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
           experience={experience}
-          // experienceEntries={experienceEntries}
           handleExperienceChange={handleExperienceChange}
           onSubmitExperience={onSubmitExperience}
+          education={education}
+          handleEducationChange={handleEducationChange}
+          onSubmitEducation={onSubmitEducation}
         />
         <CVOutput 
           currentPersonal={currentPersonal}
           experienceEntries={experienceEntries}
           editExperienceEntry={editExperienceEntry} 
           deleteExperienceEntry={deleteExperienceEntry} 
+          educationEntries={educationEntries}
+          editEducationEntry={editEducationEntry} 
+          deleteEducationEntry={deleteEducationEntry} 
         />
       </main>
     </>
