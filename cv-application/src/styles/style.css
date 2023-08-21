@@ -1,6 +1,13 @@
 body {
     padding: 5px;
     background-color: rgb(252, 240, 227);
+
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 header, .formbase, .cvOutput {
@@ -10,8 +17,14 @@ header, .formbase, .cvOutput {
 main {
     width: 100%;
     display: flex;
+    gap: 5px;
 }
 
 main > * {
     flex-grow: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
