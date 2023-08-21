@@ -1,3 +1,4 @@
+import PersonalOutput from "./PersonalOutput"
 import ExperienceOutput from "./ExperienceOutput"
 import EducationOutput from "./EducationOutput"
 
@@ -11,17 +12,10 @@ function CVOutput(props) {
     const deleteEducationEntry = props.deleteEducationEntry
 
     return <div className="cvOutput">
-        <h2>Personal Info Output</h2>
-        <div>{currentPersonal.username}</div>
-        <div>{currentPersonal.phone}</div>
-        <div>{currentPersonal.email}</div>
-        <div>{currentPersonal.website}</div>
-        
-        <h2>Education Info Output</h2>
+        <PersonalOutput currentPersonal={currentPersonal}/>
         <ExperienceOutput experienceEntries={experienceEntries} editExperienceEntry={editExperienceEntry} deleteExperienceEntry={deleteExperienceEntry}/>
-
-        <h2>Experience Info Output</h2>
         <EducationOutput educationEntries={educationEntries} editEducationEntry={editEducationEntry} deleteEducationEntry={deleteEducationEntry}/>
+        <h2>References available upon request</h2>
     </div>
 }
 

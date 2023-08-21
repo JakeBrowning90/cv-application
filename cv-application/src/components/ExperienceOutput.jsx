@@ -1,10 +1,14 @@
 function ExperienceOutput({experienceEntries, editExperienceEntry, deleteExperienceEntry}) {
-    return <ul>
+    return <ul className="cvSection">
+        <h2>Experience:</h2>
         {experienceEntries.map((experience) => {
-            return <li key={experience.id}>
-                <div>{experience.position}</div>
-                <div>{experience.organization}, {experience.location}</div>
-                <div>{experience.startDate} - {experience.endDate}</div>
+            return <li key={experience.id} className="cvEntry">
+                <h2>{experience.position}</h2>
+                <div className="entrySubtitle">
+                    <div>{experience.organization}, {experience.location}</div>
+                    <div>{experience.startDate} - {experience.endDate}</div>
+                </div>
+                
                 <div>{experience.responsibilities}</div>
                 <div>
                     <button onClick={() => editExperienceEntry(experience.id)}>
@@ -19,4 +23,4 @@ function ExperienceOutput({experienceEntries, editExperienceEntry, deleteExperie
     </ul>   
 }
 
-export default ExperienceOutput
+export default ExperienceOutput;

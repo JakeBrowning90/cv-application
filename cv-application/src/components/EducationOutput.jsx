@@ -1,13 +1,14 @@
 function EducationOutput({educationEntries, editEducationEntry, deleteEducationEntry}) {
-    return <ul>
+    return <ul className="cvSection">
+        <h2>Education:</h2>
         {educationEntries.map((education) => {
-            return <li key={education.id}>
-                <div>{education.degree}</div>
-                <div>{education.major}</div>
-                <div>{education.school}</div>
-                <div>{education.location}</div>
-                <div>{education.startDate}</div>
-                <div>{education.endDate}</div>
+            return <li key={education.id} className="cvEntry">
+                <h2>{education.degree}, {education.major}</h2>
+                <div className="entrySubtitle">
+                    <div>{education.school}, {education.location}</div>
+                    <div>{education.startDate} - {education.endDate}</div>
+                </div>
+                
                 <div>{education.details}</div>
                 <div>
                     <button onClick={() => editEducationEntry(education.id)}>
