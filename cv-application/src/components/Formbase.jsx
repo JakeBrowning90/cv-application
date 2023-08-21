@@ -1,4 +1,4 @@
-function Formbase({ personal, handlePersonalChange, onSubmitPersonal}) {
+function Formbase({ personal, handlePersonalChange, onSubmitPersonal, experience, handleExperienceChange, onSubmitExperience}) {
     return <div className="formbase">
         <h2>Personal Info form</h2>
         <form onSubmit={onSubmitPersonal}>
@@ -10,16 +10,16 @@ function Formbase({ personal, handlePersonalChange, onSubmitPersonal}) {
         </form>
 
         <h2>Experience Info form</h2>
-        <form>
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
+        <form onSubmit={onSubmitExperience}> 
+            <input type="text" name="position" value={experience.position} onChange={handleExperienceChange}/>  
+            <input type="text" name="organization" value={experience.organization} onChange={handleExperienceChange}/>  
+            <input type="text" name="location" value={experience.location} onChange={handleExperienceChange}/>  
+            <input type="text" name="responsibilities" value={experience.responsibilities} onChange={handleExperienceChange}/>  
+            <input type="text" name="startDate" value={experience.startDate} onChange={handleExperienceChange}/>  
+            <input type="text" name="endDate" value={experience.endDate} onChange={handleExperienceChange}/>  
             <button type="submit">Add Experience</button>
         </form>
+        
         <h2>Education Info form</h2>
         <form>
             <input type="text" />
