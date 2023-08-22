@@ -6,16 +6,16 @@ function PersonalForm({personal, handlePersonalChange, onSubmitPersonal, hideFor
         </div>
         <form id="personalForm" onSubmit={onSubmitPersonal}>
             <label htmlFor="usernameInput">Name:
-                <input type="text" name="username" id="usernameInput" required value={personal.username} onChange={handlePersonalChange}/>
+                <input type="text" name="username" id="usernameInput" maxLength="30" required value={personal.username} onChange={handlePersonalChange}/>
             </label>
             <label htmlFor="phoneInput">Phone:
-                <input type="text" name="phone" id="phoneInput" required value={personal.phone} onChange={handlePersonalChange}/>
+                <input type="tel" name="phone" id="phoneInput" maxLength="30" required value={personal.phone} onChange={handlePersonalChange}/>
             </label>
             <label htmlFor="emailInput">Email:
-                <input type="email" name="email" id="emailInput" required value={personal.email} onChange={handlePersonalChange}/>
+                <input type="email" name="email" id="emailInput" maxLength="20" required value={personal.email} onChange={handlePersonalChange}/>
             </label>
             <label htmlFor="websiteInput">Website:
-                <input type="text" name="website" id="websiteInput" required value={personal.website} onChange={handlePersonalChange}/>
+                <input type="url" name="website" id="websiteInput" placeholder="Portfolio, LinkedIn, Blog, etc." required value={personal.website} onChange={handlePersonalChange}/>
             </label>
             <button className="formButton" type="submit">Update</button>
         </form>
