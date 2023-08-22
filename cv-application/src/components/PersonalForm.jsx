@@ -15,7 +15,7 @@ function PersonalForm({personal, handlePersonalChange, onSubmitPersonal, hideFor
                 <input type="email" name="email" id="emailInput" maxLength="20" required value={personal.email} onChange={handlePersonalChange}/>
             </label>
             <label htmlFor="websiteInput">Website:
-                <input type="url" name="website" id="websiteInput" placeholder="Portfolio, LinkedIn, Blog, etc." required value={personal.website} onChange={handlePersonalChange}/>
+                <input type="text" name="website" id="websiteInput" placeholder="Portfolio, LinkedIn, Blog, etc." required value={personal.website} onChange={handlePersonalChange}/>
             </label>
             <button className="formButton" type="submit">Update</button>
         </form>
