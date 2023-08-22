@@ -11,10 +11,10 @@ function EducationOutput({educationEntries, editEducationEntry, deleteEducationE
                 
                 <div>{education.details}</div>
                 <div>
-                    <button onClick={() => editEducationEntry(education.id)}>
+                    <button className="outputButton" onClick={() => editEducationEntry(education.id)}>
                         Edit
                     </button>
-                    <button onClick={() => deleteEducationEntry(education.id)}>
+                    <button className="outputButton" onClick={() => deleteEducationEntry(education.id)}>
                         Delete
                     </button>
                 </div>

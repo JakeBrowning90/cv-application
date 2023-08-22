@@ -11,10 +11,10 @@ function ExperienceOutput({experienceEntries, editExperienceEntry, deleteExperie
                 
                 <div>{experience.responsibilities}</div>
                 <div>
-                    <button onClick={() => editExperienceEntry(experience.id)}>
+                    <button className="outputButton" onClick={() => editExperienceEntry(experience.id)}>
                         Edit
                     </button>
-                    <button onClick={() => deleteExperienceEntry(experience.id)}>
+                    <button className="outputButton" onClick={() => deleteExperienceEntry(experience.id)}>
                         Delete
                     </button>
                 </div>

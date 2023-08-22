@@ -199,11 +199,25 @@ function App() {
     setEducationEntries( educationEntries.filter(entry => entry.id !== id) );
   };
 
+  const hideButtons = () => {
+    let allButtons = document.querySelectorAll(".outputButton");
+    for (let button of allButtons) {
+      button.classList.toggle("hiddenButton");
+    }
+  }
+
+  const hideForm = (id) => {
+    let form = document.getElementById(id);
+    form.classList.toggle("visible");
+  }
+
+
   return (
     <>
       <Header />
       <main>
         <Formbase 
+          hideButtons={hideButtons}
           personal={personal}
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
@@ -213,6 +227,7 @@ function App() {
           education={education}
           handleEducationChange={handleEducationChange}
           onSubmitEducation={onSubmitEducation}
+          hideForm={hideForm}
         />
         <CVOutput 
           currentPersonal={currentPersonal}

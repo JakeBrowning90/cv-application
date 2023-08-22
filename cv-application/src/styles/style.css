@@ -1,10 +1,17 @@
 body {
     padding: 15px;
-    background-color: #ecf7ff;
+    background-color: #d6e9f7;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 1000px;
     margin-right: auto;
     margin-left: auto;
+}
+
+button {
+    background-color: white;
+}
+.hiddenButton {
+    display: none;
 }
 
 h1 {
@@ -28,14 +35,25 @@ header, .formbase, .cvOutput {
 }
 
 header {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+
 }
 
 .titlesDiv {
-    width: 34%; 
+    max-width: 300px; 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2px;
+}
+
+.instructionsDiv {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    gap: 5px;
 }
 
 main {
@@ -49,6 +67,7 @@ main > * {
 }
 
 .formbase {
+    height: auto;
     max-width: 300px; 
     display: flex;
     flex-direction: column;
@@ -60,20 +79,53 @@ main > * {
     gap: 5px;
 }
 
-.personalFormDiv {
+.formHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.personalHeader, .personalFormDiv {
     background-color: rgb(249, 197, 197);
 }
-.experienceFormDiv {
+.experienceHeader, .experienceFormDiv  {
     background-color: rgb(246, 246, 202);
 }
-.educationFormDiv {
+.educationHeader, .educationFormDiv  {
     background-color: rgb(210, 210, 231);
 }
 
 form {
-    display: flex;
+    display: none;
     flex-direction: column;
+    padding: 2px;
     gap: 5px;
+}
+
+#personalForm {
+    background-color: rgb(250, 221, 221);
+}
+#experienceForm {
+    background-color: rgb(253, 253, 229);
+}
+#educationForm {
+    background-color: rgb(238, 238, 244);
+}
+
+@keyframes slide {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+.visible {
+    display: flex;
+    transform-origin: top;
+    animation: slide .25s linear 0s alternate;
 }
 
 label {
@@ -93,6 +145,11 @@ input {
     gap: 5px;
 }
 
+textarea {
+    resize: none;
+    height: 50px;
+}
+
 .formButton {
     width: 50%;
     align-self: self-end;
@@ -100,6 +157,7 @@ input {
 
 .cvOutput {
     max-width: 700px;
+    min-height: 70vh;
 }
 
 .cvSection {
@@ -108,7 +166,7 @@ input {
     border-bottom: 1px solid black;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    gap: 2px;
+    gap: 5px;
 }
 
 .cvEntry {
