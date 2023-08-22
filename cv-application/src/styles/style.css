@@ -7,6 +7,10 @@ body {
     margin-left: auto;
 }
 
+a, a::after {
+ color: white;
+}
+
 button {
     background-color: white;
 }
@@ -35,6 +39,8 @@ header, .formbase, .cvOutput {
 }
 
 header {
+    background-color: rgb(1, 1, 84);
+    color: white;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 15px;
