@@ -1,4 +1,5 @@
 import PersonalForm from "./PersonalForm";
+import SummaryForm from "./SummaryForm";
 import ExperienceForm from "./ExperienceForm";
 import EducationForm from "./EducationForm";
 
@@ -17,6 +18,7 @@ function Formbase({
     return <div className="formbase">
         <button onClick={hideButtons}>Toggle clean view</button>
         <PersonalForm personal={personal} handlePersonalChange={handlePersonalChange} onSubmitPersonal={onSubmitPersonal} hideForm={hideForm}/>
+        <SummaryForm personal={personal} handlePersonalChange={handlePersonalChange} onSubmitPersonal={onSubmitPersonal} hideForm={hideForm}/>
         <ExperienceForm experience={experience} handleExperienceChange={handleExperienceChange} onSubmitExperience={onSubmitExperience} hideForm={hideForm}/>
         <EducationForm education={education} handleEducationChange={handleEducationChange} onSubmitEducation={onSubmitEducation} hideForm={hideForm}/>
     </div>

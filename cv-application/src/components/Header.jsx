@@ -1,7 +1,7 @@
 function Header() {
     return <header>
         <div className="titlesDiv">
-            <h1>CV Application</h1>
+            <h1>CV Builder 2</h1>
             <h2>Made by Jake Browning</h2>
             <h2>for The Odin Project, 2023.</h2>
             <a href="https://jakebrowning90.github.io/personal-portfolio/" target="_blank">Portfolio</a>

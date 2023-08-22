@@ -95,8 +95,11 @@ main > * {
 .personalHeader, .personalFormDiv {
     background-color: rgb(249, 197, 197);
 }
-.experienceHeader, .experienceFormDiv  {
+.summaryHeader, .summaryFormDiv {
     background-color: rgb(246, 246, 202);
+}
+.experienceHeader, .experienceFormDiv  {
+    background-color: rgb(202, 246, 210);
 }
 .educationHeader, .educationFormDiv  {
     background-color: rgb(210, 210, 231);
@@ -112,8 +115,11 @@ form {
 #personalForm {
     background-color: rgb(250, 221, 221);
 }
+#summaryForm {
+    background-color: rgb(253, 253, 229); 
+}
 #experienceForm {
-    background-color: rgb(253, 253, 229);
+    background-color: rgb(229, 253, 231);
 }
 #educationForm {
     background-color: rgb(238, 238, 244);
@@ -154,6 +160,10 @@ input {
 textarea {
     resize: none;
     height: 50px;
+}
+
+#statementInput {
+    height: 150px;
 }
 
 .formButton {
