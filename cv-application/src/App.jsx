@@ -8,13 +8,15 @@ import CVOutput from './components/CVOutput.jsx';
 
 
 function App() {
+  // Values as collected from form inputs
   const[personal, setPersonal] = useState({
     username:'',
     phone:'',
     email:'',
     website:'',
   });
-  
+
+  // Values as they appear on Output upon submitting form
   const[currentPersonal, setCurrentPersonal] = useState({
     username:'',
     phone:'',
@@ -22,13 +24,15 @@ function App() {
     website:'',
   });
   
+  // Update values of individual properties within Personal
   const handlePersonalChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
   
     setPersonal((personal) => {
       return {
-        ...personal,   // Spread Operator               
+        // Spread Operator, all values of Personal are copied in, and target is then overridden 
+        ...personal,               
         [name]: value
       }
     })
@@ -37,7 +41,7 @@ function App() {
   const onSubmitPersonal = (e) => {
     //Prevent default behavior (form refresh)
     e.preventDefault();
-    // Modify state:
+    // Modify state of currentPersonal to be a copy of Personal at that moment
     setCurrentPersonal(personal);
   };
 
@@ -130,6 +134,7 @@ function App() {
     });
   };
 
+  //Set current Experience values and input fields to those of argument ID
   const editExperienceEntry = (id) => {
     const updatedEntry = experienceEntries.find(entry => entry.id == id);
     setExperience({ 
@@ -143,8 +148,8 @@ function App() {
     });
   };
 
+  // Update array to include all except argument ID 
   const deleteExperienceEntry = (id) => {
-    // const educationEntries = educationEntries.filter(entry => entry.id !== id);
     setExperienceEntries( experienceEntries.filter(entry => entry.id !== id) );
   };
 
@@ -208,7 +213,8 @@ function App() {
       id: uuidv4(),
     });
   };
-
+  
+  //Set current Education values and input fields to those of argument ID
   const editEducationEntry = (id) => {
     const updatedEntry = educationEntries.find(entry => entry.id == id);
     setEducation({
@@ -223,11 +229,12 @@ function App() {
     });
   };
 
+  // Update array to include all except argument ID 
   const deleteEducationEntry = (id) => {
-    // const educationEntries = educationEntries.filter(entry => entry.id !== id);
     setEducationEntries( educationEntries.filter(entry => entry.id !== id) );
   };
 
+  //Change class of "Edit" and "Delete" buttons
   const hideButtons = () => {
     let allButtons = document.querySelectorAll(".outputButton");
     for (let button of allButtons) {
@@ -235,16 +242,17 @@ function App() {
     }
   }
 
+  //Change class of sections in CV Output
   const hideSection = (id) => {
     let cvSection = document.getElementById(id);
     cvSection.classList.toggle("hiddenSection");
   }
 
+  //Change class of forms in Formbase
   const hideForm = (id) => {
     let form = document.getElementById(id);
     form.classList.toggle("visible");
   }
-
 
   return (
     <>

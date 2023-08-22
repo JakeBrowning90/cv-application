@@ -1,3 +1,4 @@
+//Form to collect properties of Summary object
 function SummaryForm({summary, handleSummaryChange, onSubmitSummary, hideForm}) {
     return <div className="summaryFormDiv">
         <div className="formHeader summaryHeader">

@@ -1,3 +1,4 @@
+//Form to collect properties of Experience object
 function ExperienceForm({experience, handleExperienceChange, onSubmitExperience, hideForm}) {
     return  <div className="experienceFormDiv">
         <div className="formHeader experienceHeader">

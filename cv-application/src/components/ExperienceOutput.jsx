@@ -1,3 +1,4 @@
+//Loop through all saved Experience Objects and display their values as list items
 function ExperienceOutput({experienceEntries, editExperienceEntry, deleteExperienceEntry}) {
     return <ul className="cvSection hiddenSection" id="experienceOutput">
         <h2>Experience:</h2>

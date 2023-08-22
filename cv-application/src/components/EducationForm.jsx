@@ -1,3 +1,4 @@
+//Form to collect properties of Education object
 function EducationForm({education, handleEducationChange, onSubmitEducation, hideForm}) {
     return <div className="educationFormDiv">
         <div className="formHeader educationHeader">

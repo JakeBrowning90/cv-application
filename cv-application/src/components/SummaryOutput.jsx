@@ -1,3 +1,4 @@
+//Display currentSummary values 
 function SummaryOutput({currentSummary}) {
     return <div className="cvSection summaryOutput hiddenSection" id="summaryOutput">
         <h2>{currentSummary.title}</h2>

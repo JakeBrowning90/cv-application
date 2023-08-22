@@ -1,3 +1,4 @@
+//Loop through all saved Education Objects and display their values as list items
 function EducationOutput({educationEntries, editEducationEntry, deleteEducationEntry}) {
     return <ul className="cvSection hiddenSection" id="educationOutput">
         <h2>Education:</h2>

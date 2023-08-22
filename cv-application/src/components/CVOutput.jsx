@@ -3,10 +3,10 @@ import SummaryOutput from "./SummaryOutput"
 import ExperienceOutput from "./ExperienceOutput"
 import EducationOutput from "./EducationOutput"
 
+//Draw div to display all information added by user with applied styles
 function CVOutput(props) {
     const currentPersonal = props.currentPersonal
     const currentSummary = props.currentSummary
-
     const experienceEntries = props.experienceEntries
     const editExperienceEntry = props.editExperienceEntry
     const deleteExperienceEntry = props.deleteExperienceEntry

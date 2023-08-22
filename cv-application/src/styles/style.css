@@ -92,6 +92,11 @@ main > * {
     align-items: center;
 }
 
+.cvDisplayControls {
+    background-color: rgb(223, 223, 223);
+}    
+
+
 .personalHeader, .personalFormDiv {
     background-color: rgb(249, 197, 197);
 }
