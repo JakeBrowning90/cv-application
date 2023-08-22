@@ -9,6 +9,10 @@ function Formbase({
     personal, 
     handlePersonalChange, 
     onSubmitPersonal, 
+    summary, 
+    handleSummaryChange,
+    onSubmitSummary,
+
     experience, 
     handleExperienceChange, 
     onSubmitExperience,
@@ -18,7 +22,7 @@ function Formbase({
     return <div className="formbase">
         <button onClick={hideButtons}>Toggle clean view</button>
         <PersonalForm personal={personal} handlePersonalChange={handlePersonalChange} onSubmitPersonal={onSubmitPersonal} hideForm={hideForm}/>
-        <SummaryForm personal={personal} handlePersonalChange={handlePersonalChange} onSubmitPersonal={onSubmitPersonal} hideForm={hideForm}/>
+        <SummaryForm summary={summary} handleSummaryChange={handleSummaryChange} onSubmitSummary={onSubmitSummary} hideForm={hideForm}/>
         <ExperienceForm experience={experience} handleExperienceChange={handleExperienceChange} onSubmitExperience={onSubmitExperience} hideForm={hideForm}/>
         <EducationForm education={education} handleEducationChange={handleEducationChange} onSubmitEducation={onSubmitEducation} hideForm={hideForm}/>
     </div>

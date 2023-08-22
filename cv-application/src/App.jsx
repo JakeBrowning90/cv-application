@@ -41,6 +41,35 @@ function App() {
     setCurrentPersonal(personal);
   };
 
+  const[summary, setSummary] = useState({
+    title:'',
+    statement:'',
+  });
+  
+  const[currentSummary, setCurrentSummary] = useState({
+    title:'',
+    statement:'',
+  });
+  
+  const handleSummaryChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+  
+    setSummary((summary) => {
+      return {
+        ...summary,   // Spread Operator               
+        [name]: value
+      }
+    })
+  };
+  
+  const onSubmitSummary = (e) => {
+    //Prevent default behavior (form refresh)
+    e.preventDefault();
+    // Modify state:
+    setCurrentSummary(summary);
+  };
+
   //experience
   const[experience, setExperience] = useState({
     position: '',
@@ -221,6 +250,11 @@ function App() {
           personal={personal}
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
+
+          summary={summary}
+          handleSummaryChange={handleSummaryChange}
+          onSubmitSummary={onSubmitSummary}
+
           experience={experience}
           handleExperienceChange={handleExperienceChange}
           onSubmitExperience={onSubmitExperience}
@@ -231,6 +265,7 @@ function App() {
         />
         <CVOutput 
           currentPersonal={currentPersonal}
+          currentSummary={currentSummary}
           experienceEntries={experienceEntries}
           editExperienceEntry={editExperienceEntry} 
           deleteExperienceEntry={deleteExperienceEntry} 

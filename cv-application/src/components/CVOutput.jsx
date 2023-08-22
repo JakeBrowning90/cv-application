@@ -1,9 +1,12 @@
 import PersonalOutput from "./PersonalOutput"
+import SummaryOutput from "./SummaryOutput"
 import ExperienceOutput from "./ExperienceOutput"
 import EducationOutput from "./EducationOutput"
 
 function CVOutput(props) {
     const currentPersonal = props.currentPersonal
+    const currentSummary = props.currentSummary
+
     const experienceEntries = props.experienceEntries
     const editExperienceEntry = props.editExperienceEntry
     const deleteExperienceEntry = props.deleteExperienceEntry
@@ -13,6 +16,7 @@ function CVOutput(props) {
 
     return <div className="cvOutput">
         <PersonalOutput currentPersonal={currentPersonal}/>
+        <SummaryOutput currentSummary={currentSummary}/>
         <ExperienceOutput experienceEntries={experienceEntries} editExperienceEntry={editExperienceEntry} deleteExperienceEntry={deleteExperienceEntry}/>
         <EducationOutput educationEntries={educationEntries} editEducationEntry={editEducationEntry} deleteEducationEntry={deleteEducationEntry}/>
         <h2>References available upon request</h2>
