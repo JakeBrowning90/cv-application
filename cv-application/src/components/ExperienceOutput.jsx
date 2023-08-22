@@ -1,5 +1,5 @@
 function ExperienceOutput({experienceEntries, editExperienceEntry, deleteExperienceEntry}) {
-    return <ul className="cvSection">
+    return <ul className="cvSection hiddenSection" id="experienceOutput">
         <h2>Experience:</h2>
         {experienceEntries.map((experience) => {
             return <li key={experience.id} className="cvEntry">

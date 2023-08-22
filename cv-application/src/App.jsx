@@ -235,6 +235,11 @@ function App() {
     }
   }
 
+  const hideSection = (id) => {
+    let cvSection = document.getElementById(id);
+    cvSection.classList.toggle("hiddenSection");
+  }
+
   const hideForm = (id) => {
     let form = document.getElementById(id);
     form.classList.toggle("visible");
@@ -247,21 +252,20 @@ function App() {
       <main>
         <Formbase 
           hideButtons={hideButtons}
+          hideSection={hideSection}
+          hideForm={hideForm}
           personal={personal}
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
-
           summary={summary}
           handleSummaryChange={handleSummaryChange}
           onSubmitSummary={onSubmitSummary}
-
           experience={experience}
           handleExperienceChange={handleExperienceChange}
           onSubmitExperience={onSubmitExperience}
           education={education}
           handleEducationChange={handleEducationChange}
           onSubmitEducation={onSubmitEducation}
-          hideForm={hideForm}
         />
         <CVOutput 
           currentPersonal={currentPersonal}

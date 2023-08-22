@@ -7,7 +7,7 @@ function Header() {
             <a href="https://jakebrowning90.github.io/personal-portfolio/" target="_blank">Portfolio</a>
         </div>
         <ul className="instructionsDiv">
-            <li>Use the forms on the left to add information to your CV.</li>
+            <li>Use the controls on the left to add sections and information to your CV.</li>
             <li>Click "Edit" to make changes to an existing entry without removing it.</li>
             <li>Click "Toggle clean view" to hide the buttons on your completed CV.</li>
             <li>Try taking a screengrab!</li>

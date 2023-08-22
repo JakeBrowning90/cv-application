@@ -146,9 +146,18 @@ label {
     box-sizing: border-box;
 }
 
+.controlsLabel {
+    display: grid;
+    grid-template-columns: 1fr 60px;
+}
+
 input {
     width: 100%;
     box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    justify-self: flex-end;
 }
 
 .datesDiv {
@@ -185,6 +194,10 @@ textarea {
     gap: 5px;
 }
 
+.hiddenSection {
+    display: none;
+}
+
 .cvEntry {
     margin-left: 10px;
     display: flex;
@@ -194,7 +207,6 @@ textarea {
 
 .personalOutput {
     align-items: center;
-    
 }
 
 .entrySubtitle {
