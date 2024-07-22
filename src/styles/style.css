@@ -139,7 +139,7 @@ form {
     }
   }
 
-.visible {
+.formGroup {
     display: flex;
     transform-origin: top;
     animation: slide .25s linear 0s alternate;
