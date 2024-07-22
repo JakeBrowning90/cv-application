@@ -241,21 +241,11 @@ function App() {
     setEducationEntries(educationEntries.filter((entry) => entry.id !== id));
   };
 
-  const [cleanView, setCleanView] = useState(false);
-  // const [viewPersonalForm, setViewPersonalForm] = useState(false);
-  // const [viewSummaryForm, setViewSummaryForm] = useState(false);
-  // const [viewExperienceForm, setViewExperienceForm] = useState(false);
-  // const [viewEducationForm, setViewEducationForm] = useState(false);
-
   // Conditional rendering of Edit/Delete buttons on Output div
+  const [cleanView, setCleanView] = useState(false);
+
   const toggleCleanView = () => {
     setCleanView(!cleanView);
-  };
-
-  //Change class of forms in Formbase
-  const hideForm = (id) => {
-    let form = document.getElementById(id);
-    form.classList.toggle("visible");
   };
 
   //Change class of sections in CV Output
@@ -271,7 +261,6 @@ function App() {
         <Formbase
           toggleCleanView={toggleCleanView}
           hideSection={hideSection}
-          hideForm={hideForm}
           personal={personal}
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
