@@ -14,23 +14,31 @@ function CVOutput({
   editEducationEntry,
   deleteEducationEntry,
   cleanView,
+  summaryView,
+  experienceView,
+  educationView,
 }) {
   return (
     <div className="cvOutput">
       <PersonalOutput currentPersonal={currentPersonal} />
-      <SummaryOutput currentSummary={currentSummary} />
-      <ExperienceOutput
-        experienceEntries={experienceEntries}
-        editExperienceEntry={editExperienceEntry}
-        deleteExperienceEntry={deleteExperienceEntry}
-        cleanView={cleanView}
-      />
-      <EducationOutput
-        educationEntries={educationEntries}
-        editEducationEntry={editEducationEntry}
-        deleteEducationEntry={deleteEducationEntry}
-        cleanView={cleanView}
-      />
+      {summaryView && <SummaryOutput currentSummary={currentSummary} />}
+      {experienceView && (
+        <ExperienceOutput
+          experienceEntries={experienceEntries}
+          editExperienceEntry={editExperienceEntry}
+          deleteExperienceEntry={deleteExperienceEntry}
+          cleanView={cleanView}
+        />
+      )}
+      {educationView && (
+        <EducationOutput
+          educationEntries={educationEntries}
+          editEducationEntry={editEducationEntry}
+          deleteEducationEntry={deleteEducationEntry}
+          cleanView={cleanView}
+        />
+      )}
+
       <h2>References available upon request</h2>
     </div>
   );

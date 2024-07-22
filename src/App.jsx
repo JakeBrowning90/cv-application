@@ -241,17 +241,23 @@ function App() {
     setEducationEntries(educationEntries.filter((entry) => entry.id !== id));
   };
 
-  // Conditional rendering of Edit/Delete buttons on Output div
+  // Conditional rendering of Edit/Delete buttons, Sections on Output div
   const [cleanView, setCleanView] = useState(false);
+  const [summaryView, setSummaryView] = useState(false);
+  const [experienceView, setExperienceView] = useState(false);
+  const [educationView, setEducationView] = useState(false);
 
   const toggleCleanView = () => {
     setCleanView(!cleanView);
   };
-
-  //Change class of sections in CV Output
-  const hideSection = (id) => {
-    let cvSection = document.getElementById(id);
-    cvSection.classList.toggle("hiddenSection");
+  const toggleSummaryView = () => {
+    setSummaryView(!summaryView);
+  };
+  const toggleExperienceView = () => {
+    setExperienceView(!experienceView);
+  };
+  const toggleEducationView = () => {
+    setEducationView(!educationView);
   };
 
   return (
@@ -260,7 +266,9 @@ function App() {
       <main>
         <Formbase
           toggleCleanView={toggleCleanView}
-          hideSection={hideSection}
+          toggleSummaryView={toggleSummaryView}
+          toggleExperienceView={toggleExperienceView}
+          toggleEducationView={toggleEducationView}
           personal={personal}
           handlePersonalChange={handlePersonalChange}
           onSubmitPersonal={onSubmitPersonal}
@@ -284,6 +292,9 @@ function App() {
           editEducationEntry={editEducationEntry}
           deleteEducationEntry={deleteEducationEntry}
           cleanView={cleanView}
+          summaryView={summaryView}
+          experienceView={experienceView}
+          educationView={educationView}
         />
       </main>
     </>

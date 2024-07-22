@@ -1,4 +1,11 @@
-function DisplayControls({ hideSection, toggleCleanView }) {
+function DisplayControls({
+  toggleCleanView,
+  toggleSummaryView,
+  toggleExperienceView,
+  toggleEducationView,
+}) {
+
+
   return (
     <div className="cvDisplayControls">
       <h2 className="formHeader">Include Sections:</h2>
@@ -6,9 +13,9 @@ function DisplayControls({ hideSection, toggleCleanView }) {
         Summary:
         <input
           type="checkbox"
-          name=""
+          name="summary"
           id="cvSummaryCheckbox"
-          onChange={() => hideSection("summaryOutput")}
+          onChange={toggleSummaryView}
         />
       </label>
       <label htmlFor="cvExperienceCheckbox" className="controlsLabel">
@@ -17,7 +24,7 @@ function DisplayControls({ hideSection, toggleCleanView }) {
           type="checkbox"
           name=""
           id="cvExperienceCheckbox"
-          onChange={() => hideSection("experienceOutput")}
+          onChange={toggleExperienceView}
         />
       </label>
       <label htmlFor="cvEducationCheckbox" className="controlsLabel">
@@ -26,7 +33,7 @@ function DisplayControls({ hideSection, toggleCleanView }) {
           type="checkbox"
           name=""
           id="cvEducationCheckbox"
-          onChange={() => hideSection("educationOutput")}
+          onChange={toggleEducationView}
         />
       </label>
       <button onClick={toggleCleanView}>Toggle clean view</button>

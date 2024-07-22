@@ -6,7 +6,7 @@ function EducationOutput({
   cleanView,
 }) {
   return (
-    <ul className="cvSection hiddenSection" id="educationOutput">
+    <ul className="cvSection" id="educationOutput">
       <h2>Education:</h2>
       {educationEntries.map((education) => {
         return (

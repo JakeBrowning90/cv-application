@@ -6,7 +6,7 @@ function ExperienceOutput({
   cleanView,
 }) {
   return (
-    <ul className="cvSection hiddenSection" id="experienceOutput">
+    <ul className="cvSection" id="experienceOutput">
       <h2>Experience:</h2>
       {experienceEntries.map((experience) => {
         return (

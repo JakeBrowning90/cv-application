@@ -7,7 +7,9 @@ import EducationForm from "./EducationForm";
 // Draw base to hold all forms and display controls
 function Formbase({
   toggleCleanView,
-  hideSection,
+  toggleSummaryView,
+  toggleExperienceView,
+  toggleEducationView,
   personal,
   handlePersonalChange,
   onSubmitPersonal,
@@ -24,8 +26,10 @@ function Formbase({
   return (
     <div className="formbase">
       <DisplayControls
-        hideSection={hideSection}
         toggleCleanView={toggleCleanView}
+        toggleSummaryView={toggleSummaryView}
+        toggleExperienceView={toggleExperienceView}
+        toggleEducationView={toggleEducationView}
       />
       <PersonalForm
         personal={personal}
