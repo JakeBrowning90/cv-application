@@ -14,9 +14,6 @@ a, a::after {
 button {
     background-color: white;
 }
-.hiddenButton {
-    display: none;
-}
 
 h1 {
     font-size: 1.5rem;
